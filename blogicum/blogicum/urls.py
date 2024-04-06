@@ -15,17 +15,23 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-
-from blogicum import settings
 from django.urls import path, include
+
+from blog.views import pagenotfound
+from pages.views import pagenotfound
+from blogicum import settings
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-    path('', include('pages.urls')),
+    path('pages/', include('pages.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+
+handler404 = pagenotfound

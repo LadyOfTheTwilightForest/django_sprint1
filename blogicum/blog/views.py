@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from django.http import HttpResponseNotFound, Http404
+
 
 def index(request):
     template = 'blog/index.html'
@@ -11,6 +13,8 @@ def index(request):
 
 def post_detail(request, id):
     template = 'blog/detail.html'
+    if int(id) not in post_dict:
+        raise Http404()
     context = {
         'post': posts[id]
     }
@@ -67,3 +71,9 @@ posts = [
                 укутывал их, чтобы не испортились от дождя.''',
     },
 ]
+
+post_dict = {post['id']: post for post in posts}
+
+
+def pagenotfound(request, exception):
+    return HttpResponseNotFound('<h1>Страница не найдена<h1>')

@@ -1,7 +1,6 @@
-# from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
+from django.http import HttpResponseNotFound
 
 
 def about(request):
@@ -12,3 +11,7 @@ def about(request):
 def rules(request):
     template = 'pages/rules.html'
     return render(request, template)
+
+
+def pagenotfound(reguest, exception):
+    return HttpResponseNotFound('<h1>Страница не найдена<h1>')
