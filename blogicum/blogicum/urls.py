@@ -17,8 +17,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from blog.views import pagenotfound
-from pages.views import pagenotfound
+from blog.views import page_not_found
+from pages.views import page_not_found
 from blogicum import settings
 
 
@@ -34,4 +34,4 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
 
 
-handler404 = pagenotfound
+handler404 = page_not_found

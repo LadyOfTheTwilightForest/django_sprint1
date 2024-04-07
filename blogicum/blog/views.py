@@ -75,5 +75,5 @@ posts = [
 post_dict = {post['id']: post for post in posts}
 
 
-def pagenotfound(request, exception):
+def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена<h1>')

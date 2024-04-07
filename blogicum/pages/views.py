@@ -13,5 +13,5 @@ def rules(request):
     return render(request, template)
 
 
-def pagenotfound(reguest, exception):
+def page_not_found(reguest, exception):
     return HttpResponseNotFound('<h1>Страница не найдена<h1>')
