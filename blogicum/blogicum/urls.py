@@ -22,7 +22,6 @@ from pages.views import page_not_found
 from blogicum import settings
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
