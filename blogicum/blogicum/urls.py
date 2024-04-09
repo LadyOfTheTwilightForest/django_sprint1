@@ -17,9 +17,9 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from blogicum import settings
 from blog.views import page_not_found
 from pages.views import page_not_found
-from blogicum import settings
 
 
 urlpatterns = [

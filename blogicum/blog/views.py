@@ -13,10 +13,10 @@ def index(request):
 
 def post_detail(request, id):
     template = 'blog/detail.html'
-    if int(id) not in post_dict:
+    if id not in post_dict:
         raise Http404()
     context = {
-        'post': posts[id]
+        'post': post_dict[id]
     }
     return render(request, template, context=context)
 
